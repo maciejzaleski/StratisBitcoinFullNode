@@ -256,7 +256,6 @@ namespace Stratis.Bitcoin.Features.LightWallet
             this.logger.LogTrace("({0}:'{1}')", nameof(date), date);
 
             // Set the syncWalletDate to the date passed in parameter
-            //ToDo: Add check for current date hight
             if (this.syncWalletDate == DateTime.MinValue || this.walletTip.Header.BlockTime.LocalDateTime > date)
             {
                 // This will update the condition within the async loop below
