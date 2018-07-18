@@ -39,7 +39,7 @@ We have two types of rules. Hard rules are those that are required and your code
 them. Soft rules are more like guidelines - try to use them where possible. The reviewer can ask you to update your code 
 if it violates a soft rule and it can be fixed easily.
 
- * **XMLDOC** - Use triple slash (XML documentation) comments for classes, interfaces, methods, parameters, fields, properties, structures, enums, etc. These comments are required - even for trivial code. *(HARD)*
+ * **XMLDOC** - Use triple slash (XML documentation) comments for public/protected classes, interfaces, public methods, parameters on public methods, structures, enums, etc. These comments are required. *(HARD)*
    * **SUMMARY-1** - First paragraph in `<summary>` must be short, no more than 3 lines. If you find you need more than 2 lines, maybe you are not writing the summary anymore and you are already explaining details. *(HARD)*
    * **SUMMARY-2** - `<summary>` should contain information useful for someone who is trying to understand the code. Implementation details belong to `<remarks>`. *(SOFT)*
    * **METHODS** - Method comments must contain `<summary>`. If the method has input and/or output parameters `<param>` must be used for each of them. If the method returns anything else than `void` or `Task` (but not `Task<T>`),
@@ -53,7 +53,7 @@ it must contain `<returns>`. The order of the tags is `<summary>`, `<param>`, `<
  * **BIG-PICTURE** - Try to describe the intent or the big picture rather than what the code does. Explain the interactions of the code with other parts of the system. This includes contracts and limitations that has to be respected - e.g. code protected by locks. *(SOFT)*
  * **ENUMS** - When a parameter or a return value is an enum or if there are any special values, including lower and upper bounds, comment each such special value. The only exceptions are very trivial enums, such days of week, provided that there is no counter-intuitive use. *(HARD)*
  * **UPDATES** - Keep comments up to date when editing commented code. *(HARD)*
-   * **UNCOMMENTED** - If editing uncommented code, add comments with the change. In general, leave the code better commented that you found it, if possible. *(SOFT)*
+   * **UNCOMMENTED** - If editing uncommented code, add comments with the change if and only if it needs it. In general, leave the code better than you found it, if possible. *(SOFT)*
  * **SENTENCES** - Write comments as sentences - with capital letter at the beginning and dot (question mark, exclamation mark) at the end. Omitting verbs is OK. *(SOFT)*
  * **ADD-VALUE** - Every comment should add value, even if the comment is trivial on trivial code (XML documentation comments). *(SOFT)* 
 
