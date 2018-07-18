@@ -55,7 +55,7 @@ it must contain `<returns>`. The order of the tags is `<summary>`, `<param>`, `<
  * **UPDATES** - Keep comments up to date when editing commented code. *(HARD)*
    * **UNCOMMENTED** - If editing uncommented code, add comments with the change if and only if it needs it. In general, leave the code better than you found it, if possible. *(SOFT)*
  * **SENTENCES** - Write comments as sentences - with capital letter at the beginning and dot (question mark, exclamation mark) at the end. Omitting verbs is OK. *(SOFT)*
- * **ADD-VALUE** - Every comment should add value, even if the comment is trivial on trivial code (XML documentation comments). *(SOFT)* 
+ * **ADD-VALUE** - Every comment should add value. *(SOFT)* 
 
 
 ## Examples
