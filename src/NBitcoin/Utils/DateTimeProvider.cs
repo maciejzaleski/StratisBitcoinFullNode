@@ -39,11 +39,19 @@ namespace NBitcoin
         /// </summary>
         /// <param name="adjustedTimeOffset">Offset to adjust time with.</param>
         void SetAdjustedTimeOffset(TimeSpan adjustedTimeOffset);
+
+        /// <summary>
+        /// Sets node time difference in relation to the system clock
+        /// </summary>
+        /// <param name="timeOffset"></param>
+        void SetSystemTimeOffset(int timeOffset);
     }
 
     /// <inheritdoc />
     public class DateTimeProvider : IDateTimeProvider
     {
+        private int systemTimeOffset = 0;
+
         /// <summary>Static instance of the object to prevent the need of creating new instance.</summary>
         public static IDateTimeProvider Default { get; }
 
@@ -75,7 +83,7 @@ namespace NBitcoin
         /// <inheritdoc />
         public virtual DateTime GetUtcNow()
         {
-            return DateTime.UtcNow;
+            return DateTime.UtcNow.AddSeconds(this.systemTimeOffset);
         }
 
         /// <inheritdoc />
@@ -100,6 +108,12 @@ namespace NBitcoin
         public void SetAdjustedTimeOffset(TimeSpan adjustedTimeOffset)
         {
             this.adjustedTimeOffset = adjustedTimeOffset;
+        }
+
+        /// <inheritdoc />
+        public void SetSystemTimeOffset(int timeOffset)
+        {
+            this.systemTimeOffset = timeOffset;
         }
     }
 }
