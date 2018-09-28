@@ -26,7 +26,7 @@ namespace Stratis.Bitcoin.Features.Consensus.Rules.CommonRules
             //   {0xaa, 0x21, 0xa9, 0xed}, and the following 32 bytes are SHA256^2(witness root, witness nonce). In case there are
             //   multiple, the last one is used.
             bool fHaveWitness = false;
-            if (deploymentFlags.ScriptFlags.HasFlag(ScriptVerify.Witness))
+            if (deploymentFlags.ScriptFlags.HasFlag(ScriptVerify.Witness) && context.BlockValidationContext.ChainedBlock.Height >= 432)
             {
                 int commitpos = this.GetWitnessCommitmentIndex(block);
                 if (commitpos != -1)
