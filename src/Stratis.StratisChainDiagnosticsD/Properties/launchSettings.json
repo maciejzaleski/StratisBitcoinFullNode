@@ -2,7 +2,7 @@
   "profiles": {
     "Stratis.StratisChainDiagnosticsD": {
       "commandName": "Project",
-      "commandLineArgs": "-regtest -datadir=C:\\Code\\StratisBitcoinFullNode\\uat\\NodeData"
+      "commandLineArgs": "-regtest -datadir=C:\\Code\\StratisBitcoinFullNode\\uat\\NodeData\\ClientA"
     }
   }
 }
