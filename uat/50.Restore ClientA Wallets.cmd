@@ -1,0 +1,2 @@
+title Restoring Source wallet for Bitcoin network
+curl -X POST "http://localhost:38221/api/Wallet/create" -H "accept: application/json" -H "Content-Type: application/json-patch+json" -d "{ \"mnemonic\": \"armor toddler cat square dish march fan skull sugar lemon sword ship\", \"password\": \"node\", \"passphrase\": \"node\", \"network\": \"StratisRegTest\", \"folderPath\": null, \"name\": \"ClientA\"}"

@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Threading.Tasks;
 using NBitcoin.Protocol;
 using Stratis.Bitcoin;
@@ -24,6 +25,7 @@ namespace Stratis.StratisD
             try
             {
                 var nodeSettings = new NodeSettings(protocolVersion:ProtocolVersion.ALT_PROTOCOL_VERSION, args:args);
+                nodeSettings.Network.SeedNodes.Add(new NetworkAddress(IPAddress.Parse("192.168.98.101"), 37221));
 
                 IFullNode node = new FullNodeBuilder()
                     .UseNodeSettings(nodeSettings)

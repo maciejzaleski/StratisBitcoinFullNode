@@ -22,7 +22,8 @@ namespace Stratis.StratisD
         {
             try
             {
-                var nodeSettings = new NodeSettings(protocolVersion:ProtocolVersion.ALT_PROTOCOL_VERSION, args:args);
+                var nodeSettings = new NodeSettings(protocolVersion:ProtocolVersion.ALT_PROTOCOL_VERSION, args:args);                
+                nodeSettings.Network.SeedNodes.Add(new NetworkAddress(System.Net.IPAddress.Parse("192.168.98.110"), nodeSettings.ConfigReader.GetOrDefault<int>("port", nodeSettings.Network.DefaultPort)));
 
                 IFullNode node = new FullNodeBuilder()
                     .UseNodeSettings(nodeSettings)

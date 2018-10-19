@@ -1,0 +1,2 @@
+start /b "1" "Stratis-Qt-v2.0.0.5-win.exe" -regtest -port=18001 -server -rpcport=19001 -rpcuser=stratisTestUser -rpcpassword=testPassword -server -datadir=C:\Code\StratisBitcoinFullNode\uat\NodeData\StratisCoreA -addnode=127.0.0.1:28001
+start /b "1" "Stratis-Qt-v2.0.0.5-win.exe" -regtest -port=28001 -server -rpcport=29001 -rpcuser=stratisTestUser -rpcpassword=testPassword -server -datadir=C:\Code\StratisBitcoinFullNode\uat\NodeData\StratisCoreB
